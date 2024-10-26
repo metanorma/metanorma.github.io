@@ -14,6 +14,22 @@ required document attributes.
 
 == Build and validation
 
+`:mn-document-class:`::
+The flavor of Metanorma used to compile the document; e.g. `iso`, `nist`, `ogc`. Needs to be a supported version
+of the document. Synonyms: `document-class`, `mn-flavor`, `flavor`.
+
+`:mn-output-extensions:`::
+The output formats to generate for the document, comma-delimited; e.g. `xml,presentation,html,doc,pdf`.
+The formats supported vary for each flavor, but all flavors support `xml` (Semantic XML), `presentation`
+(Presentation XML), and one of `html` or `pdf`. Synonym: `:output-extensions:`.
+
+`:mn-relaton-output-file:`::
+Output the bibliographic record describing the document as a Relaton XML file (with the suffix `.rxl`).
+Synonym: `:relaton-output-file:`.
+
+`:mn-keep-asciimath:`::
+Do not translate Asciimath in the document to MathML. Synonym: `:keep-asciimath:`.
+
 `:nodoc:`::
 Instructs Metanorma to not generate Word and HTML output, means only XML output will be generated.
 
@@ -908,6 +924,12 @@ link:/author/topics/blocks/requirements-modspec/#identifier-base[ModSpec identif
 A comma-delimited list of Metanorma block names, which should have numbering
 suppressed throughout the document [added in https://github.com/metanorma/metanorma-standoc/releases/tag/v2.4.6].
 Typically will be used for sourcecode fragemnts: `:block-unnumbered: sourcecode`.
+
+`:coverpage-image:`:: Comma-delimited list of image locations, for images to be included on the (PDF) cover page. All image locations are relative to the source document. Currently only supported for BSI, ITU, JIS, Plateau.
+`:innercoverpage-image:`:: Same, for images to be included on the (PDF) inside cover page. Currently only supported for BSI.
+`:tocside-image:`:: Same, for images to be included on the (PDF) Table of Contents side page. Currently only supported for BSI.
+`:backpage-image:`:: Same, for images to be included on the (PDF) back page. Currently only supported for BSI, JIS.
+
 
 == PDF protection and permissions
 
